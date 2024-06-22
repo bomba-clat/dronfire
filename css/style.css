@@ -1,0 +1,107 @@
+/* style.css */
+
+/* Reset some default styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f9f9f9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.chat-container {
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 600px; /* Width of the chat container */
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#chat-box {
+    width: 100%;
+    min-height: 400px; /* Minimum height of the chat box */
+    background-color: #f0f0f0;
+    border-radius: 6px;
+    padding: 20px; /* Padding inside the chat box */
+    margin-bottom: 20px; /* Margin bottom for spacing */
+    overflow-y: auto;
+}
+
+.message {
+    max-width: 70%; /* Maximum width of the message box */
+    margin-bottom: 10px; /* Margin bottom between messages */
+    padding: 10px; /* Padding inside the message box */
+    border-radius: 10px; /* Rounded corners for message box */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Shadow for message box */
+}
+
+.message p {
+    margin: 0; /* Remove default margin for paragraphs */
+}
+
+.message:nth-child(even) {
+    align-self: flex-start; /* Align even-indexed messages (robot) to the left */
+    background-color: #dff0d8; /* Background color for robot messages */
+}
+
+.message:nth-child(odd) {
+    align-self: flex-end; /* Align odd-indexed messages (user) to the right */
+    background-color: #d9edf7; /* Background color for user messages */
+}
+
+#user-input {
+    width: calc(100% - 40px); /* Width of the user input */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-right: 10px;
+    font-size: 16px;
+}
+
+.send-button {
+    width: 40px; /* Width of the send button */
+    height: 40px; /* Height of the send button */
+    background-color: #4CAF50;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    margin-top: 10px; /* Margin top for positioning */
+}
+
+.send-button svg {
+    width: 24px; /* Size of the arrow icon */
+    height: 24px;
+    fill: #fff; /* Color of the arrow icon */
+}
+
+.send-button:hover {
+    background-color: #45a049;
+}
+
+/* Animation for chat-container */
+.chat-container {
+    animation: slide-in 0.5s ease;
+}
+
+@keyframes slide-in {
+    from {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
